@@ -4,7 +4,7 @@ export function createTask(req, res) {
 }
 
 export function getAllTasks(req, res) {
-
+    res.status(200).json({"message": "Created"})
 }
 
 export function getTaskById(req, res) {

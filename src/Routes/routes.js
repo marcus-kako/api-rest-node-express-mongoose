@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 const routes = express.Router();
 import { 
     getAllTasks,
@@ -7,7 +7,7 @@ import {
     putTaskById,
     patchTaskById,
     deleteTaskById
-    } from './Controllers/TaskController.js';
+    } from '../Controllers/TaskController.js';
 
 
 routes.post('/tasks', createTask)
