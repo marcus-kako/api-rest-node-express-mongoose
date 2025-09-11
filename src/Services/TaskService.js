@@ -1,21 +1,24 @@
 // implementando Regras de Negócios.
+import Task from "../Routes/Models/TaskModel";
 
-export function getTasks() {
-
+export async function findAll() {
+    await Task.find();
 }
 
-export function findTaskById(id) {
-
+export async function findById(id) {
+    await Task.findById(id);
 }
 
-export function updateTaskById(id) {
-
+export async function create(taskData) {
+    const task = new Task(taskData);
+    return await task.save();
 }
 
-export function updateCheckStatus(id) {
-
+export async function update(id, taskData) {
+    await Task.findByIdAndUpdate(id, taskData, { new: true });
 }
 
-export function deleteTaskById(id) {
 
+export async function deleteTaskById(id) {
+    return await Task.findByIdAndDelete(id);
 }
