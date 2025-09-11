@@ -1,8 +1,8 @@
 // implementando Regras de Negócios.
-import Task from "../Routes/Models/TaskModel";
+import Task from "../Routes/Models/TaskModel.js";
 
 export async function findAll() {
-    await Task.find();
+    return await Task.find();
 }
 
 export async function findById(id) {
