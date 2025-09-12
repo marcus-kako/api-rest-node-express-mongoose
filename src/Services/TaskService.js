@@ -6,7 +6,7 @@ export async function findAll() {
 }
 
 export async function findById(id) {
-    await Task.findById(id);
+    return await Task.findById(id);
 }
 
 export async function create(taskData) {
@@ -15,10 +15,12 @@ export async function create(taskData) {
 }
 
 export async function update(id, taskData) {
-    await Task.findByIdAndUpdate(id, taskData, { new: true });
+    await Task.findByIdAndUpdate(id, taskData)
+    return await findById(id)
+
 }
 
 
-export async function deleteTaskById(id) {
+export async function deleteTask(id) {
     return await Task.findByIdAndDelete(id);
 }
